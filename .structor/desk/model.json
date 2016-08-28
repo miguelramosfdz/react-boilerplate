@@ -1,0 +1,28 @@
+{
+  "pages": [
+    {
+      "pageName": "HomePage",
+      "pagePath": "/home",
+      "children": [
+        {
+          "type": "div",
+          "children": [
+            {
+              "type": "div",
+              "children": [
+                {
+                  "type": "SimpleList"
+                }
+              ],
+              "props": {
+                "style": {
+                  "padding": "20px"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
