@@ -61,7 +61,7 @@
   <dd>Visually compose components in Structor's playground and generate scaffolds of complex components (containers, sagas) from created composition.</dd>
 
   <dt>Library of precreated components</dt>
-  <dd>Generating many more components from [Structor Market](https://helmetrex.com) library.</dd>
+  <dd>Install many components from <a href="https://helmetrex.com">Structor Market</a> library.</dd>
 
   <dt>Instant feedback</dt>
   <dd>Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!</dd>
