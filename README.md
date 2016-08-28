@@ -1,3 +1,5 @@
+### This is a [Structor](https://github.com/ipselon/structor) compatible fork of:
+
 <img src="https://raw.githubusercontent.com/mxstbr/react-boilerplate-brand/master/assets/banner-metal.jpg" alt="react boilerplate banner" align="center" />
 
 <br />
@@ -49,11 +51,17 @@
   <sub>Made with ❤︎ by <a href="https://twitter.com/mxstbr">Max Stoiber</a> and <a href="https://github.com/mxstbr/react-boilerplate/graphs/contributors">contributors</a>. <i>If you're using this boilerplate, we'd love to <a href="https://github.com/mxstbr/react-boilerplate/issues/115">hear from you</a>!</i></sub>
 </div>
 
-## Features
+## Features (*plus additional features from Structor)
 
 <dl>
   <dt>Quick scaffolding</dt>
   <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
+
+  <dt>Visual composition</dt>
+  <dd>Visually compose components in Structor's playground and generate scaffolds of complex components (containers, sagas) from created composition.</dd>
+
+  <dt>Library of precreated components</dt>
+  <dd>Install many components from <a href="https://helmetrex.com">Structor Market</a> library.</dd>
 
   <dt>Instant feedback</dt>
   <dd>Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!</dd>
@@ -95,9 +103,9 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 
 <sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, PostCSS, Autoprefixer, react-router, Offline First, ServiceWorker, CSS Modules, redux-saga, FontFaceObserver, PageSpeed Insights</i></sub>
 
-## Quick start
+## Quick start (*changed in order to use this fork)
 
-1. Clone this repo using `git clone --depth=1 https://github.com/mxstbr/react-boilerplate.git`
+1. Clone this repo using `git clone --depth=1 https://github.com/ipselon/react-boilerplate.git`
 1. Run `npm run setup` to install dependencies and clean the git repo.<br />
    *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
 1. Run `npm run clean` to delete the example app.
