@@ -49,6 +49,7 @@ class MouseOverOverlay extends Component {
         if($DOMNode){
             const pos = position;
             const newPos = {
+                key: pos.key,
                 label: pos.label,
                 top: pos.top,
                 left: pos.left,
@@ -84,7 +85,8 @@ class MouseOverOverlay extends Component {
                 const newPos = {
                     top: pos.top,
                     left: pos.left,
-                    label: options.type
+                    label: options.type,
+                    key: options.key
                 };
                 if (this.$DOMNode && this.lastPosition) {
                     if((newPos.top === this.lastPosition.top && newPos.left > this.lastPosition.left)
@@ -103,7 +105,9 @@ class MouseOverOverlay extends Component {
     }
 
     render(){
+        const { selectedKeys } = this.props;
         const {newPos, border} = this.state;
+        let isLabelShown = false;
         let content;
         if(newPos){
             const endPoint = {
@@ -158,18 +162,19 @@ class MouseOverOverlay extends Component {
                 left: nullPx,
                 position: position
             };
-            if(newPos.top < 50){
-                labelLine.bottom = 'calc(-' + (newPos.height - 1) + px + ' - 1em)';
+            if(newPos.height < 5){
+                labelLine.bottom = 'calc(-' + (newPos.height - 1) + px + ')';
             } else {
-                labelLine.top = '-1em';
+                labelLine.top = '0px';
             }
+            isLabelShown = !selectedKeys || selectedKeys.length <= 0 || selectedKeys.indexOf(newPos.key) < 0;
             content = (
                 <div style={endPoint}>
                     <div style={topLine}></div>
                     <div style={leftLine}></div>
                     <div style={bottomLine}></div>
                     <div style={rightLine}></div>
-                    <span className="mouse-overlay-label" style={labelLine}>{newPos.label}</span>
+                    {isLabelShown && <span className="mouse-overlay-label" style={labelLine}>{newPos.label}</span>}
                 </div>
             );
         } else {

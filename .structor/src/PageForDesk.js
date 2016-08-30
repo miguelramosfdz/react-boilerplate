@@ -9,7 +9,6 @@ import MouseOverOverlay from './MouseOverOverlay.js';
 import SelectedOverlay from './SelectedOverlay.js';
 import HighlightedOverlay from './HighlightedOverlay.js';
 import ClipboardOverlay from './ClipboardOverlay.js';
-import PreviewOverlay from './PreviewOverlay.js';
 
 function wrapComponent(WrappedComponent, props) {
     const { onMouseDown, initialState, key, type } = props;
@@ -70,7 +69,7 @@ function wrapComponent(WrappedComponent, props) {
         handleMouseOver(e){
             if(initialState && initialState.onMouseOver){
                 this.initDOMNode();
-                initialState.onMouseOver({ targetDOMNode: this.$DOMNode[0], type});
+                initialState.onMouseOver({ targetDOMNode: this.$DOMNode[0], type, key});
             }
         },
         handleMouseOut(e){
@@ -171,10 +170,6 @@ class PageForDesk extends Component {
 
     bindOnPathnameChanged(func){
         this.onPathnameChanged = func;
-    }
-
-    bindGetComponentInPreview(func){
-        this.getComponentInPreview = func;
     }
 
     bindToState(signature, func){
@@ -401,10 +396,11 @@ class PageForDesk extends Component {
 
     render(){
         let boundaryOverlays = [];
-        let previewOverlay = null;
+        let selectedKeys = undefined;
         if(this.state.isEditModeOn && this.state.pathname){
             const {selected, highlighted, forCutting, forCopying} = this.getMarked(this.state.pathname);
             if(selected && selected.length > 0){
+                selectedKeys = selected;
                 selected.forEach(key => {
                     boundaryOverlays.push(
                         <SelectedOverlay key={'selected' + key}
@@ -444,18 +440,6 @@ class PageForDesk extends Component {
                     );
                 });
             }
-            const preview = this.getComponentInPreview();
-            if(preview){
-                const { componentInPreview, variantsInPreview, previewModel, defaultVariantKey } = preview;
-                previewOverlay = (
-                    <PreviewOverlay initialState={this.initialState}
-                                    variantsInPreview={variantsInPreview}
-                                    defaultVariantKey={defaultVariantKey}
-                                    componentInPreview={componentInPreview}>
-                        {this.createPreviewElement(previewModel, null, {isEditModeOn: false})}
-                    </PreviewOverlay>
-                );
-            }
         }
         return (
             <div id="pageContainer" style={{padding: '0.1px'}}>
@@ -465,9 +449,9 @@ class PageForDesk extends Component {
                     <MouseOverOverlay key="mouseOverBoundary"
                                       ref="mouseOverBoundary"
                                       initialState={this.initialState}
+                                      selectedKeys={selectedKeys}
                                       bSize="1px"/> : null
                 }
-                {previewOverlay}
             </div>
         );
     }
