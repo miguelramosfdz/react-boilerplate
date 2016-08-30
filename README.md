@@ -1,4 +1,8 @@
-### This is a [Structor](https://github.com/ipselon/structor) compatible fork of:
+<div align="center">
+<h1>
+React Boilerplate integrated with <a href="https://github.com/ipselon/structor">Structor</a>
+</h1>
+</div>
 
 <img src="https://raw.githubusercontent.com/mxstbr/react-boilerplate-brand/master/assets/banner-metal.jpg" alt="react boilerplate banner" align="center" />
 
@@ -57,10 +61,10 @@
   <dt>Quick scaffolding</dt>
   <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
 
-  <dt>Visual composition</dt>
-  <dd>Visually compose components in Structor's playground and generate scaffolds of complex components (containers, sagas) from created composition.</dd>
+  <dt>*WYSIWYG editor</dt>
+  <dd>Visually compose components in Structor's workspace and generate scaffolds of complex components. You may construct a React component of any complexity combining components and styling them right on the page. </dd>
 
-  <dt>Library of precreated components</dt>
+  <dt>*Library of components</dt>
   <dd>Install many components from <a href="https://helmetrex.com">Structor Market</a> library.</dd>
 
   <dt>Instant feedback</dt>
@@ -110,9 +114,37 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
    *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
 1. Run `npm run clean` to delete the example app.
 
+## Running Structor
+
+1. Run `nmp run structor`
+   *Open Structor's workspace at `http://localhost:2222/structor`.
+
 Now you're ready to rumble!
 
 > Please note that this boilerplate is **not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead.
+
+## The changes were made for Structor
+
+1. `.structor` metadata directory is added.
+1. Additional `structor` command is added into `scripts` section in `package.json` file.
+1. Additional `webpack.structor.babel.js` configuration is added into `internals/webpack` directory.
+1. Additional `app/assets` directory is added.
+1. In order to use custom CSS files without packing them into npm modules the following changes were made in `webpack.base.babel.js`:
+```diff
+{
+  test: /\.css$/,
+-  include: /node_modules/,
++  include: [/node_modules/, /app\/assets/],
+  loaders: ['style-loader', 'css-loader'],
+}
+...
+{
+  test: /\.css$/,
+-  exclude: /node_modules/,
++  exclude: [/node_modules/, /app\/assets/],
+  loader: options.cssLoaders,
+}
+``` 
 
 ## Documentation
 
