@@ -55,6 +55,16 @@ React Boilerplate integrated with <a href="https://github.com/ipselon/structor">
   <sub>Made with ❤︎ by <a href="https://twitter.com/mxstbr">Max Stoiber</a> and <a href="https://github.com/mxstbr/react-boilerplate/graphs/contributors">contributors</a>. <i>If you're using this boilerplate, we'd love to <a href="https://github.com/mxstbr/react-boilerplate/issues/115">hear from you</a>!</i></sub>
 </div>
 
+#### Content
+
+* [Features (*plus additional features from Structor)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#features-plus-additional-features-from-structor)
+* [Quick start (*changed)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#quick-start-changed-in-order-to-use-this-fork)
+  * [Running Structor](https://github.com/ipselon/react-boilerplate/blob/master/README.md#running-structor)
+* [The changes for Structor](https://github.com/ipselon/react-boilerplate/blob/master/README.md#the-changes-for-structor)
+* [Documentation](https://github.com/ipselon/react-boilerplate/blob/master/README.md#documentation)
+* [Supporters](https://github.com/ipselon/react-boilerplate/blob/master/README.md#supporters)
+* [License](https://github.com/ipselon/react-boilerplate/blob/master/README.md#license)
+
 ## Features (*plus additional features from Structor)
 
 <dl>
@@ -107,9 +117,9 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 
 <sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, PostCSS, Autoprefixer, react-router, Offline First, ServiceWorker, CSS Modules, redux-saga, FontFaceObserver, PageSpeed Insights</i></sub>
 
-## Quick start (*changed in order to use this fork)
+## Quick start (*changed)
 
-1. Clone this repo using `git clone --depth=1 https://github.com/ipselon/react-boilerplate.git`
+1. *Clone this repo using `git clone --depth=1 https://github.com/ipselon/react-boilerplate.git`
 1. Run `npm run setup` to install dependencies and clean the git repo.<br />
    *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
 1. Run `npm run clean` to delete the example app.
