@@ -5,7 +5,7 @@
     -webkit-text-size-adjust: 100%;
     background-color: #35b3ee;
     color: #ffffff;
-    padding: 3px;
+    padding: 4px;
     font-size: 10px;
     border-radius: 2px;
 }
@@ -13,11 +13,18 @@
     font-family: 'Open Sans', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font-size: 12px;
-    padding: 3px;
-    border-radius: 50%;
-    background-color: #35b3ee;
-    opacity: 0.4;
+    font-size: 8px;
+    padding: 3px 7px;
+    opacity: 1;
+    cursor: pointer;
+}
+.selected-overlay-button:first-child {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+}
+.selected-overlay-button:last-child {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
 }
 .selected-overlay-highlighted {
     border: 2px solid #f0ad4e;
@@ -25,32 +32,64 @@
     border-radius: 2px;
 }
 .selected-overlay-button:hover {
-    opacity: 1;
+    background-size: 2em 2em;
+    background-color: #2185D0;
 }
-.selected-overlay-button-quick-add-new {
-    background: url(../imgs/cross.svg) center no-repeat #35b3ee;
-    background-size: 1em 1em;
+.selected-overlay-button-append-before {
+    background: url(../imgs/append-before.svg) center no-repeat #35b3ee;
+    background-size: 1.5em 1.5em;
     width: 2em;
     height: 2em;
 }
-.selected-overlay-button-copy-paste {
-    background: url(../imgs/scissor-tool.svg) center no-repeat #35b3ee;
-    background-size: 1em 1em;
-    width: 2em;
-    height: 2em;
-}
-.selected-overlay-button-before-after {
-    background: url(../imgs/square.svg) center no-repeat #35b3ee;
-    background-size: 1em 1em;
+.selected-overlay-button-insert-first {
+    background: url(../imgs/insert-first.svg) center no-repeat #35b3ee;
+    background-size: 1.5em 1.5em;
     width: 2em;
     height: 2em;
 }
 .selected-overlay-button-edit {
-    background: url(../imgs/draw.svg) center no-repeat #35b3ee;
-    background-size: 1em 1em;
+    background: url(../imgs/edit.svg) center no-repeat #f0ad4e;
+    background-size: 1.5em 1.5em;
     width: 2em;
     height: 2em;
 }
+.selected-overlay-button-cut {
+    background: url(../imgs/scissor-tool.svg) center no-repeat #35b3ee;
+    background-size: 1.5em 1.5em;
+    width: 2em;
+    height: 2em;
+}
+.selected-overlay-button-copy {
+    background: url(../imgs/copy.svg) center no-repeat #35b3ee;
+    background-size: 1.5em 1.5em;
+    width: 2em;
+    height: 2em;
+}
+.selected-overlay-button-replace {
+    background: url(../imgs/replace.svg) center no-repeat #35b3ee;
+    background-size: 1.5em 1.5em;
+    width: 2em;
+    height: 2em;
+}
+.selected-overlay-button-remove {
+    background: url(../imgs/remove.svg) center no-repeat #f0ad4e;
+    background-size: 1.5em 1.5em;
+    width: 2em;
+    height: 2em;
+}
+.selected-overlay-button-insert-last {
+    background: url(../imgs/insert-last.svg) center no-repeat #35b3ee;
+    background-size: 1.5em 1.5em;
+    width: 2em;
+    height: 2em;
+}
+.selected-overlay-button-append-after {
+    background: url(../imgs/append-after.svg) center no-repeat #35b3ee;
+    background-size: 1.5em 1.5em;
+    width: 2em;
+    height: 2em;
+}
+
 .selected-overlay-menu-box {
     border: 1px solid #35b3ee;
     background-color: #ffffff;
