@@ -31,12 +31,7 @@ module.exports = {
       loader: 'babel',
       exclude: /node_modules/,
       query: {
-        presets: ['react-hmre', 'es2015-webpack', 'react', 'stage-0'],
-        plugins: [
-          'transform-react-remove-prop-types',
-          'transform-react-constant-elements',
-          'transform-react-inline-elements'
-        ]
+        presets: ['react-hmre', 'es2015', 'react', 'stage-0']
       },
     }, {
       // Transform our own .css files with PostCSS and CSS-modules
