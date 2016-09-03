@@ -115,16 +115,15 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 
 ## Quick start (*changed)
 
-1. *Clone this repo using `git clone --depth=1 https://github.com/ipselon/react-boilerplate.git`
-1. Run `npm run setup` to install dependencies and clean the git repo.<br />
-   *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
+1. *Clone this repo using `git clone --depth=1 https://github.com/ipselon/react-boilerplate.git` OR download and unpack ZIP.
+1. Change directory using `cd react-boilerplate`
+1. Run `npm run setup` to install dependencies and clean the git repo. *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
 1. Run `npm run clean` to delete the example app.
 
-#### Running Structor
+#### *Running Structor
 
 1. Run `nmp run structor`
-
-> Open Structor's workspace at `http://localhost:2222/structor`.
+1. Open in the browser Structor's workspace: `http://localhost:2222/structor`.
 
 Now you're ready to rumble!
 
