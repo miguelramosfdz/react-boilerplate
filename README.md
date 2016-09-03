@@ -114,16 +114,17 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
    *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
 1. Run `npm run clean` to delete the example app.
 
-## Running Structor
+#### Running Structor
 
 1. Run `nmp run structor`
-   > Open Structor's workspace at `http://localhost:2222/structor`.
+
+> Open Structor's workspace at `http://localhost:2222/structor`.
 
 Now you're ready to rumble!
 
 > Please note that this boilerplate is **not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead.
 
-## The changes were made for Structor
+## The changes for Structor
 
 1. `.structor` metadata directory is added.
 1. Additional `structor` command is added into `scripts` section in `package.json` file.
@@ -146,6 +147,7 @@ Now you're ready to rumble!
 }
 ``` 
 1. `react-router` version is changed up to `3.0.0-alpha.X` in order to provide history compatibility
+
 ## Documentation
 
 - [Intro](docs/general): What's included and why
