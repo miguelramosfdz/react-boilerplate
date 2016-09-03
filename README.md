@@ -156,7 +156,6 @@ Now you're ready to rumble!
   loader: options.cssLoaders,
 }
 ``` 
-1. `react-router` version is changed up to `3.0.0-alpha.X` in order to provide history compatibility
 
 ## Documentation
 
