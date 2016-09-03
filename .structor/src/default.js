@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createHistory} from 'history';
-import {Router, useRouterHistory} from 'react-router';
+import {Router, browserHistory} from 'react-router';
 import PageForDesk from './PageForDesk.js';
 import {getRealPathName} from './constants.js';
 import configureStore from '../app/store-bridge.js';
@@ -20,12 +20,10 @@ class PageContainer extends React.Component {
 
 window.__createPageDesk = function () {
 
-	const history = useRouterHistory(createHistory)();
-
-	const store = configureStore(history);
+	const store = configureStore(browserHistory);
 
 	window.__switchToPath = function (pagePath) {
-		history.push(getRealPathName(pagePath));
+		browserHistory.push(getRealPathName(pagePath));
 	};
 
 	let childRoutes = [];
@@ -49,7 +47,7 @@ window.__createPageDesk = function () {
 
 	ReactDOM.render(
 		<Provider store={store}>
-			<Router history={history} routes={routeConfig}/>
+			<Router history={browserHistory} routes={routeConfig}/>
 		</Provider>,
 		document.getElementById('content')
 	);
