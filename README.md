@@ -117,7 +117,7 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 ## Running Structor
 
 1. Run `nmp run structor`
-   *Open Structor's workspace at `http://localhost:2222/structor`.
+   > Open Structor's workspace at `http://localhost:2222/structor`.
 
 Now you're ready to rumble!
 
@@ -145,7 +145,7 @@ Now you're ready to rumble!
   loader: options.cssLoaders,
 }
 ``` 
-
+1. `react-router` version is changed up to `3.0.0-alpha.X` in order to provide history compatibility
 ## Documentation
 
 - [Intro](docs/general): What's included and why
