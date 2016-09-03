@@ -58,7 +58,7 @@ React Boilerplate integrated with <a href="https://github.com/ipselon/structor">
 #### Content
 
 * [Features (*plus additional features from Structor)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#features-plus-additional-features-from-structor)
-* [Quick start (*changed)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#quick-start-changed-in-order-to-use-this-fork)
+* [Quick start (*changed)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#quick-start-changed)
   * [Running Structor](https://github.com/ipselon/react-boilerplate/blob/master/README.md#running-structor)
 * [The changes for Structor](https://github.com/ipselon/react-boilerplate/blob/master/README.md#the-changes-for-structor)
 * [Documentation](https://github.com/ipselon/react-boilerplate/blob/master/README.md#documentation)
