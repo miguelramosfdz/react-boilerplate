@@ -22,7 +22,7 @@ module.exports = {
   output: {
     path: path.join(process.cwd(), '.structor/desk/__build__'),
     filename: 'bundle.js',
-    publicPath: '/structor-dev/__build__'
+    publicPath: '/structor-dev/__build__',
   },
 
   module: {
@@ -31,7 +31,7 @@ module.exports = {
       loader: 'babel',
       exclude: /node_modules/,
       query: {
-        presets: ['react-hmre', 'es2015', 'react', 'stage-0']
+        presets: ['react-hmre', 'es2015', 'react', 'stage-0'],
       },
     }, {
       // Transform our own .css files with PostCSS and CSS-modules
@@ -85,7 +85,7 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
-    })
+    }),
 
   ],
 
@@ -97,7 +97,7 @@ module.exports = {
     }),
     postcssReporter({ // Posts messages from plugins to the terminal
       clearMessages: true,
-    })
+    }),
   ],
 
   resolve: {
@@ -111,13 +111,13 @@ module.exports = {
     packageMains: [
       'jsnext:main',
       'main',
-    ]
+    ],
   },
 
   // Emit a source map for easier debugging
   devtool: 'cheap-module-eval-source-map',
   target: 'web', // Make web variables accessible to webpack, e.g. window
   stats: false, // Don't show stats in the console
-  progress: true
+  progress: true,
 
 };
