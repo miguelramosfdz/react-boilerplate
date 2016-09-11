@@ -10,6 +10,7 @@
     border-radius: 2px;
 }
 .selected-overlay-button {
+    box-sizing: content-box;
     font-family: 'Open Sans', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -48,7 +49,7 @@
     height: 2em;
 }
 .selected-overlay-button-edit {
-    background: url(../imgs/edit.svg) center no-repeat #f0ad4e;
+    background: url(../imgs/edit.svg) center no-repeat #78CB5B;
     background-size: 1.5em 1.5em;
     width: 2em;
     height: 2em;
