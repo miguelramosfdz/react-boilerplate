@@ -36,7 +36,7 @@ module.exports = {
     }, {
       // Transform our own .css files with PostCSS and CSS-modules
       test: /\.css$/,
-      exclude: [/node_modules/, /app\/assets/],
+      exclude: [/node_modules/, /app[\\\/]assets/],
       loader: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
     }, {
       // Do not transform vendor's CSS with CSS-modules
@@ -45,7 +45,7 @@ module.exports = {
       // they will be a part of our compilation either way.
       // So, no need for ExtractTextPlugin here.
       test: /\.css$/,
-      include: [/node_modules/, /app\/assets/],
+      include: [/node_modules/, /app[\\\/]assets/],
       loaders: ['style-loader', 'css-loader'],
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,

@@ -140,14 +140,14 @@ Now you're ready to rumble!
 {
   test: /\.css$/,
 -  include: /node_modules/,
-+  include: [/node_modules/, /app\/assets/],
++  include: [/node_modules/, /app[\\\/]assets/],
   loaders: ['style-loader', 'css-loader'],
 }
 ...
 {
   test: /\.css$/,
 -  exclude: /node_modules/,
-+  exclude: [/node_modules/, /app\/assets/],
++  exclude: [/node_modules/, /app[\\\/]assets/],
   loader: options.cssLoaders,
 }
 ``` 
