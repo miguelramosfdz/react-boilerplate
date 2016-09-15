@@ -115,7 +115,7 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 
 ## Quick start (*changed)
 
-1. *Clone this repo using `git clone --depth=1 https://github.com/ipselon/react-boilerplate.git` OR download and unpack ZIP.
+1. *Clone this repo using `git clone --depth=1 https://github.com/ipselon/react-boilerplate.git` OR download and unpack ZIP [master.zip](https://github.com/ipselon/react-boilerplate/archive/master.zip).
 1. Change directory using `cd react-boilerplate`
 1. Run `npm run setup` to install dependencies and clean the git repo. *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
 1. Run `npm run clean` to delete the example app.
