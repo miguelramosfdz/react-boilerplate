@@ -122,7 +122,7 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 
 #### *Running Structor
 
-1. Run `nmp run structor`
+1. Run `npm run structor`
 1. Open in the browser Structor's workspace: `http://localhost:2222/structor`.
 
 Now you're ready to rumble!
