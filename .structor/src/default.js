@@ -2,11 +2,10 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createHistory} from 'history';
 import {Router, browserHistory} from 'react-router';
 import PageForDesk from './PageForDesk.js';
 import {getRealPathName} from './constants.js';
-import configureStore from '../app/store-bridge.js';
+import configureStore from '../app/store.js';
 
 class PageContainer extends React.Component {
 	render() {
@@ -20,7 +19,7 @@ class PageContainer extends React.Component {
 
 window.__createPageDesk = function () {
 
-	const store = configureStore(browserHistory);
+	const store = configureStore();
 
 	window.__switchToPath = function (pagePath) {
 		browserHistory.push(getRealPathName(pagePath));
