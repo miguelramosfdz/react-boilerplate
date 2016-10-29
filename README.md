@@ -51,7 +51,7 @@ React Boilerplate integrated with <a href="https://github.com/ipselon/structor">
   <sub>Made with ❤︎ by <a href="https://twitter.com/mxstbr">Max Stoiber</a> and <a href="https://github.com/mxstbr/react-boilerplate/graphs/contributors">contributors</a>. <i>If you're using this boilerplate, we'd love to <a href="https://github.com/mxstbr/react-boilerplate/issues/115">hear from you</a>!</i></sub>
 </div>
 
-#### Content
+#### Contents
 
 * [Features (*plus additional features from Structor)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#features-plus-additional-features-from-structor)
 * [Quick start (*changed)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#quick-start-changed)
