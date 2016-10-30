@@ -15,7 +15,7 @@ module.exports = {
   // Add hot reloading in development
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE
-    'webpack-hot-middleware/client?path=/structor-dev/a&timeout=2000&overlay=false',
+    'webpack-hot-middleware/client?path=/structor-dev/a&timeout=2000&overlay=false&noInfo=true',
     path.join(process.cwd(), '.structor/src/default.js'), // Start
   ],
 
