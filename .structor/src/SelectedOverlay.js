@@ -215,9 +215,9 @@ class SelectedOverlay extends Component {
 				}
 				if (newPos.height < 50) {
 					if (newPos.top < 50) {
-						buttonLine.bottom = 'calc(-' + (newPos.height - 1) + px + ' - 20px)';
+						buttonLine.bottom = 'calc(-' + (newPos.height - 1) + px + ' - 22px)';
 					} else {
-						buttonLine.top = '-20px';
+						buttonLine.top = '-22px';
 					}
 				} else {
 					buttonLine.top = '0px';
@@ -232,37 +232,37 @@ class SelectedOverlay extends Component {
 					<div style={rightLine}></div>
 					{!isMultiple ?
 						<div style={buttonLine}>
-							{!isEmpty && <div className="selected-overlay-button selected-overlay-button-append-before"
-											  title="Append from clipboard before selected"
-											  onClick={(e) => this.handleButtonClick(selectedKey, onBefore, e)}/>}
-							{!isEmpty && <div className="selected-overlay-button selected-overlay-button-insert-first"
-											  title="Insert from clipboard into selected as first child"
-											  onClick={(e) => this.handleButtonClick(selectedKey, onFirst, e)}
-											  style={{borderRight: '1px solid #FFFFFF'}}/>}
-							<div className="selected-overlay-button selected-overlay-button-edit"
+							<div className="selected-overlay-button umy-icon-append-before"
+								 title="Append before selected"
+								 onClick={(e) => this.handleButtonClick(selectedKey, onBefore, e)}/>
+							<div className="selected-overlay-button umy-icon-insert-first"
+								 title="Insert into selected as first child"
+								 onClick={(e) => this.handleButtonClick(selectedKey, onFirst, e)}
+								 style={{borderRight: '1px solid #FFFFFF'}}/>
+							<div className="selected-overlay-button umy-icon-edit success"
 								 onClick={(e) => this.handleButtonClick(selectedKey, onLoadOptions, e)}
 								 title="Edit component properties"
 								 style={{borderRight: '1px solid #FFFFFF'}}/>
-							<div className="selected-overlay-button selected-overlay-button-copy"
+							<div className="selected-overlay-button umy-icon-copy"
 								 title="Copy selected into clipboard"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onCopy, e)}	/>
-							<div className="selected-overlay-button selected-overlay-button-cut"
+								 onClick={(e) => this.handleButtonClick(selectedKey, onCopy, e)}/>
+							<div className="selected-overlay-button umy-icon-cut"
 								 title="Cut selected into clipboard"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onCut, e)}	/>
-							{!isEmpty && <div className="selected-overlay-button selected-overlay-button-replace"
-											  title="Replace selected with clipboard"
-											  onClick={(e) => this.handleButtonClick(selectedKey, onReplace, e)}/>}
-							<div className="selected-overlay-button selected-overlay-button-remove"
+								 onClick={(e) => this.handleButtonClick(selectedKey, onCut, e)}/>
+							<div className="selected-overlay-button umy-icon-replace"
+								 title="Replace selected"
+								 onClick={(e) => this.handleButtonClick(selectedKey, onReplace, e)}/>
+							<div className="selected-overlay-button umy-icon-delete warning"
 								 title="Remove component from the page"
 								 onClick={(e) => this.handleButtonClick(selectedKey, onDelete, e)}
 								 style={{borderLeft: '1px solid #FFFFFF'}}/>
-							{!isEmpty && <div className="selected-overlay-button selected-overlay-button-insert-last"
-											  title="Insert from clipboard into selected as last child"
-											  onClick={(e) => this.handleButtonClick(selectedKey, onLast, e)}
-											  style={{borderLeft: '1px solid #FFFFFF'}}/>}
-							{!isEmpty && <div className="selected-overlay-button selected-overlay-button-append-after"
-											  title="Append from clipboard after selected"
-											  onClick={(e) => this.handleButtonClick(selectedKey, onAfter, e)}/>}
+							<div className="selected-overlay-button umy-icon-insert-last"
+								 title="Insert into selected as last child"
+								 onClick={(e) => this.handleButtonClick(selectedKey, onLast, e)}
+								 style={{borderLeft: '1px solid #FFFFFF'}}/>
+							<div className="selected-overlay-button umy-icon-append-after"
+								 title="Append after selected"
+								 onClick={(e) => this.handleButtonClick(selectedKey, onAfter, e)}/>
 						</div> : null
 					}
 				</div>
