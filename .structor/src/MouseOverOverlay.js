@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 
 const borderRadius = '2px';
 const nullPx = '0px';
@@ -162,8 +161,8 @@ class MouseOverOverlay extends Component {
                 left: nullPx,
                 position: position
             };
-            if(newPos.height < 5){
-                labelLine.bottom = 'calc(-' + (newPos.height - 1) + px + ')';
+            if(newPos.height < 45){
+                labelLine.top = '-21px';
             } else {
                 labelLine.top = '0px';
             }
