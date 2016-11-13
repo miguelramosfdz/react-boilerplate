@@ -5,11 +5,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-// PostCSS plugins
-const cssnext = require('postcss-cssnext');
-const postcssFocus = require('postcss-focus');
-const postcssReporter = require('postcss-reporter');
-
 module.exports = {
 
   // Add hot reloading in development
@@ -31,13 +26,8 @@ module.exports = {
       loader: 'babel',
       exclude: /node_modules/,
       query: {
-        presets: ['react-hmre', 'es2015', 'react', 'stage-0'],
+        presets: ['react-hmre'],
       },
-    }, {
-      // Transform our own .css files with PostCSS and CSS-modules
-      test: /\.css$/,
-      exclude: [/node_modules/, /app[\\\/]assets/],
-      loader: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
     }, {
       // Do not transform vendor's CSS with CSS-modules
       // The point is that they remain in global scope.
@@ -45,7 +35,7 @@ module.exports = {
       // they will be a part of our compilation either way.
       // So, no need for ExtractTextPlugin here.
       test: /\.css$/,
-      include: [/node_modules/, /app[\\\/]assets/],
+      include: [/node_modules/, /app[\\\/]assets/], // eslint-disable-line
       loaders: ['style-loader', 'css-loader'],
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -89,26 +79,15 @@ module.exports = {
 
   ],
 
-  // Process the CSS with PostCSS
-  postcss: () => [
-    postcssFocus(), // Add a :focus to every :hover
-    cssnext({ // Allow future CSS features to be used, also auto-prefixes the CSS...
-      browsers: ['last 2 versions', 'IE > 10'], // ...based on this browser list
-    }),
-    postcssReporter({ // Posts messages from plugins to the terminal
-      clearMessages: true,
-    }),
-  ],
-
   resolve: {
     modules: ['app', 'node_modules'],
     extensions: [
-      '',
       '.js',
       '.jsx',
       '.react.js',
     ],
-    packageMains: [
+    mainFields: [
+      'browser',
       'jsnext:main',
       'main',
     ],
@@ -118,6 +97,4 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   target: 'web', // Make web variables accessible to webpack, e.g. window
   stats: false, // Don't show stats in the console
-  progress: true,
-
 };

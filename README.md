@@ -51,10 +51,10 @@
 
 #### Contents
 
-* [Features (*plus additional features from Structor)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#features-plus-additional-features-from-structor)
-* [Quick start (*changed)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#quick-start-changed)
+* [Features (* plus additional features from Structor)](https://github.com/ipselon/react-boilerplate/blob/master/README.md#features-plus-additional-features-from-structor)
+* [Quick start](https://github.com/ipselon/react-boilerplate/blob/master/README.md#quick-start-changed)
   * [Running Structor](https://github.com/ipselon/react-boilerplate/blob/master/README.md#running-structor)
-* [The changes for Structor](https://github.com/ipselon/react-boilerplate/blob/master/README.md#the-changes-for-structor)
+* [The changes made for Structor compatibility](https://github.com/ipselon/react-boilerplate/blob/master/README.md#the-changes-for-structor)
 * [Documentation](https://github.com/ipselon/react-boilerplate/blob/master/README.md#documentation)
 * [Supporters](https://github.com/ipselon/react-boilerplate/blob/master/README.md#supporters)
 * [License](https://github.com/ipselon/react-boilerplate/blob/master/README.md#license)
@@ -111,14 +111,12 @@ There’s also a <a href="https://vimeo.com/168648012">fantastic video</a> on ho
 
 <sub><i>Keywords: React.js, Redux, Hot Reloading, ESNext, Babel, react-router, Offline First, ServiceWorker, `styled-components`, redux-saga, FontFaceObserver, PageSpeed Insights</i></sub>
 
-## Quick start (*changed)
+## Quick start
 
-1. Clone this repo using `git clone --depth=1 https://github.com/mxstbr/react-boilerplate.git`
+1. Clone this repo using `git clone https://github.com/ipselon/react-boilerplate.git` OR download and unpack ZIP [master.zip](https://github.com/ipselon/react-boilerplate/archive/master.zip).
 1. Run `npm run setup` to install dependencies and clean the git repo.<br />
    *We auto-detect `yarn` for installing packages by default, if you wish to force `npm` usage do: `USE_YARN=false npm run setup`*<br />
    *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
-1. *Clone this repo using `git clone --depth=1 https://github.com/ipselon/react-boilerplate.git` OR download and unpack ZIP [master.zip](https://github.com/ipselon/react-boilerplate/archive/master.zip).
-1. Run `npm run setup` to install dependencies and clean the git repo. *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
 1. Run `npm run clean` to delete the example app.
 
 #### *Running Structor
@@ -130,7 +128,7 @@ Now you're ready to rumble!
 
 > Please note that this boilerplate is **production-ready and not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead. If you want a solid, battle-tested base to build your next product upon and have some experience with react, this is the perfect start for you.
 
-## The changes for Structor
+## The changes made for Structor
 
 1. `.structor` metadata directory is added.
 1. Additional `structor` command is added into `scripts` section in `package.json` file.
