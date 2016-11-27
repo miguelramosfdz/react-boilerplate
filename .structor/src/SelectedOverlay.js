@@ -5,7 +5,7 @@ const nullPx = '0px';
 const px = 'px';
 const position = 'absolute';
 const borderStyle = 'solid #35b3ee';
-const borderSize = '2px';
+const borderSize = '1px';
 
 function isVisible(element) {
 	let invisibleParent = false;
@@ -32,14 +32,16 @@ class SelectedOverlay extends Component {
 			newPos: null,
 			border: '' + (props.bSize ? props.bSize : borderSize) + ' ' + (props.bStyle ? props.bStyle : borderStyle),
 			contextMenuType: null,
-			contextMenuItem: null
+			contextMenuItem: null,
+			isOverlay: false,
 		};
 		this.startRefreshTimer = this.startRefreshTimer.bind(this);
 		this.refreshPosition = this.refreshPosition.bind(this);
 		this.subscribeToInitialState = this.subscribeToInitialState.bind(this);
 		this.setSelectedPosition = this.setSelectedPosition.bind(this);
 		this.resetTimer = this.resetTimer.bind(this);
-		this.handleButtonClick = this.handleButtonClick.bind(this);
+		this.handleMouseEnterLine = this.handleMouseEnterLine.bind(this);
+		this.handleMouseLeaveLine = this.handleMouseLeaveLine.bind(this);
 	}
 
 	componentDidMount() {
@@ -135,20 +137,36 @@ class SelectedOverlay extends Component {
 		}
 	}
 
-	handleButtonClick(selectedKey, func, e) {
+	handleButtonClick = (selectedKey, func) => (e) => {
 		e.preventDefault();
 		e.stopPropagation();
 		if (func) {
 			func(selectedKey, e.metaKey || e.ctrlKey)
 		}
+	};
+
+	handleMouseEnterLine(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		if(!this.state.isOverlay){
+			this.setState({isOverlay: true});
+		}
+	}
+
+	handleMouseLeaveLine(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		if(this.state.isOverlay){
+			this.setState({isOverlay: false});
+		}
 	}
 
 	render() {
-		const {newPos, border} = this.state;
+		const {newPos, border, isOverlay} = this.state;
 		const {selectedKey, initialState: {onLoadOptions, isMultipleSelection}} = this.props;
 		const {initialState: {onCopy, onCut, onDelete, onBefore, onFirst, onLast, onAfter, onReplace, isClipboardEmpty}} = this.props;
 		const isMultiple = isMultipleSelection();
-		const isEmpty = isClipboardEmpty();
+		// const isEmpty = isClipboardEmpty();
 		let content;
 		if (newPos) {
 			const endPoint = {
@@ -167,7 +185,8 @@ class SelectedOverlay extends Component {
 				position: position,
 				borderTopLeftRadius: borderRadius,
 				borderTopRightRadius: borderRadius,
-				borderTop: border
+				borderTop: border,
+				opacity: 0.5,
 			};
 			const leftLine = {
 				top: nullPx,
@@ -177,7 +196,8 @@ class SelectedOverlay extends Component {
 				position: position,
 				borderTopLeftRadius: borderRadius,
 				borderBottomLeftRadius: borderRadius,
-				borderLeft: border
+				borderLeft: border,
+				opacity: 0.5,
 			};
 			const bottomLine = {
 				bottom: '-' + (newPos.height - 1) + px,
@@ -187,7 +207,8 @@ class SelectedOverlay extends Component {
 				position: position,
 				borderBottomLeftRadius: borderRadius,
 				borderBottomRightRadius: borderRadius,
-				borderBottom: border
+				borderBottom: border,
+				opacity: 0.5,
 			};
 			const rightLine = {
 				right: '-' + (newPos.width - 1) + px,
@@ -197,7 +218,8 @@ class SelectedOverlay extends Component {
 				position: position,
 				borderTopRightRadius: borderRadius,
 				borderBottomRightRadius: borderRadius,
-				borderRight: border
+				borderRight: border,
+				opacity: 0.5,
 			};
 			let buttonLine;
 
@@ -215,54 +237,71 @@ class SelectedOverlay extends Component {
 				}
 				if (newPos.height < 50) {
 					if (newPos.top < 50) {
-						buttonLine.bottom = 'calc(-' + (newPos.height - 1) + px + ' - 22px)';
+						buttonLine.bottom = 'calc(-' + (newPos.height - 1) + px + ' - 23px)';
 					} else {
-						buttonLine.top = '-22px';
+						buttonLine.top = '-23px';
 					}
 				} else {
 					buttonLine.top = '0px';
 				}
 			}
 
+			let overlay;
+			if(isOverlay) {
+				overlay = {
+					top: nullPx,
+					left: nullPx,
+					width: newPos.width + px,
+					height: newPos.height + px,
+					opacity: 0.2,
+					backgroundColor: '#35b3ee',
+				};
+			}
+
 			content = (
 				<div style={endPoint}>
-					<div style={topLine}></div>
-					<div style={leftLine}></div>
-					<div style={bottomLine}></div>
-					<div style={rightLine}></div>
+					{isOverlay && <div style={overlay} />}
+					<div style={topLine} />
+					<div style={leftLine} />
+					<div style={bottomLine} />
+					<div style={rightLine} />
 					{!isMultiple ?
-						<div style={buttonLine}>
+						<div
+							style={buttonLine}
+							onMouseOver={this.handleMouseEnterLine}
+							onMouseOut={this.handleMouseLeaveLine}
+						>
 							<div className="selected-overlay-button umy-icon-append-before"
 								 title="Append before selected"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onBefore, e)}/>
+								 onClick={this.handleButtonClick(selectedKey, onBefore)}/>
 							<div className="selected-overlay-button umy-icon-insert-first"
 								 title="Insert into selected as first child"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onFirst, e)}
+								 onClick={this.handleButtonClick(selectedKey, onFirst)}
 								 style={{borderRight: '1px solid #FFFFFF'}}/>
 							<div className="selected-overlay-button umy-icon-edit success"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onLoadOptions, e)}
+								 onClick={this.handleButtonClick(selectedKey, onLoadOptions)}
 								 title="Edit component properties"
 								 style={{borderRight: '1px solid #FFFFFF'}}/>
 							<div className="selected-overlay-button umy-icon-copy"
 								 title="Copy selected into clipboard"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onCopy, e)}/>
+								 onClick={this.handleButtonClick(selectedKey, onCopy)}/>
 							<div className="selected-overlay-button umy-icon-cut"
 								 title="Cut selected into clipboard"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onCut, e)}/>
+								 onClick={this.handleButtonClick(selectedKey, onCut)}/>
 							<div className="selected-overlay-button umy-icon-replace"
 								 title="Replace selected"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onReplace, e)}/>
+								 onClick={this.handleButtonClick(selectedKey, onReplace)}/>
 							<div className="selected-overlay-button umy-icon-delete warning"
 								 title="Remove component from the page"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onDelete, e)}
+								 onClick={this.handleButtonClick(selectedKey, onDelete)}
 								 style={{borderLeft: '1px solid #FFFFFF'}}/>
 							<div className="selected-overlay-button umy-icon-insert-last"
 								 title="Insert into selected as last child"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onLast, e)}
+								 onClick={this.handleButtonClick(selectedKey, onLast)}
 								 style={{borderLeft: '1px solid #FFFFFF'}}/>
 							<div className="selected-overlay-button umy-icon-append-after"
 								 title="Append after selected"
-								 onClick={(e) => this.handleButtonClick(selectedKey, onAfter, e)}/>
+								 onClick={this.handleButtonClick(selectedKey, onAfter)}/>
 						</div> : null
 					}
 				</div>

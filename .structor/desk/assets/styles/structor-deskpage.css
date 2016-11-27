@@ -20,7 +20,7 @@
     -webkit-text-size-adjust: 100%;
     font-size: 14px;
     padding: 5px 5px;
-    opacity: 1;
+    opacity: .5;
     cursor: pointer;
     background-color: #35b3ee;
     color: #ffffff;
@@ -36,6 +36,7 @@
 .selected-overlay-button:hover {
     background-size: 2em 2em;
     background-color: #2185D0;
+    opacity: 1;
 }
 .warning {
     background-color: #f0ad4e;

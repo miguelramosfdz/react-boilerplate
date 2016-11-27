@@ -339,7 +339,7 @@ class PageForDesk extends Component {
             }
 
         } catch(e){
-            console.error('Element type: ' + modelNode.type + ' is not valid React Element. Please check your index.js file. ' + e);
+            console.error('Element type: ' + modelNode.type + ' is not valid React Element. Please check your components.js file. ' + e);
         }
         return result;
     }
@@ -364,7 +364,7 @@ class PageForDesk extends Component {
                 if(!type){
                     type = modelNode.type;
                 } else if(!isObject(type)){
-                    console.error('Element type: ' + modelNode.type + ' is not object. Please check your index.js file');
+                    console.error('Element type: ' + modelNode.type + ' is not object. Please check your components.js file');
                     type = 'div';
                 }
             }
